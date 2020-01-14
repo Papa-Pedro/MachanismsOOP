@@ -1,12 +1,12 @@
 # MachanismsOOP
 Задание №1:
 Реализовать подсчет определителя матрицы N x N. Алгоритм по созданию матрицы и подсчету определителя обернуть в class, struct или enum, соответствующий протоколу MatrixTestable. Конструктор должен получать на вход размерность матрицы, и замыкание преобразующее координаты элемента в значение. Например, номер колонки умноженный на два минус номер строки.
-protocol MatrixTestable      
+protocol MatrixTestable  
+
     // Constructor
     // dimension: Matrix size
     // elementConstructor: Closure with input element row and column, which return the element Int value.
     init(dimension: Int, elementConstructor: ((_ column: Int, _ row: Int) -> Int))
-
     // Determinant calculating function
     func determinant() -> Int
 Задание№2:
