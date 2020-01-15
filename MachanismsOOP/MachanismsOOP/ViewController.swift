@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var size: Int = 0
     var determinant: Int?
+    var array: [[Int]] = []
     
     @IBOutlet weak var determinantLabel: UILabel!
     @IBOutlet weak var sizeMatrixLabel: UILabel!
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
     
     @IBAction func inputSizeButton(_ sender: UIButton) {
         if let size1: Int = Int(sizeMatrixField.text ?? "") {
-            if size1 < 6 {
+            if size1 < 5 {
                 size = size1
                 performSegue(withIdentifier: "ShowSegue", sender: self)
             }

@@ -10,5 +10,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var elementMatrixLabel: UILabel!
+    @IBOutlet weak var elementMatrixField: UITextField!
+    // @IBOutlet weak var elementMatrixLabel: UILabel!
+    
 }
