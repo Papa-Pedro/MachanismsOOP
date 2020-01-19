@@ -13,39 +13,35 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
     var size: Int = 0
     var array: [[Int]] = []
     var minorArray: [[Int]] = []
+    var arrayOfElement = [CollectionViewCell?]()
     var determinant: Int = 0
     var s = -1
     var usedBegin = true
-   // var destinationVC: ViewController?
     
     @IBAction func cancel(_ sender: Any) {
-        usedBegin = false
-        self.collectionView!.reloadData()
-        //dismiss(animated: true, completion: nil)
-       // performSegue(withIdentifier: "BackSegue", sender: self)
+        print(determinantArray(array, size))
+        for row in 0..<size {
+            for coulum in 0..<size {
+                if let element: Int = Int(arrayOfElement[coulum + row * size]?.elementMatrixField.text ?? "") {
+                    if element > 10000 && element < -10000 {
+                        array[row][coulum] = 0
+                    } else {
+                        array[row][coulum] = element
+                    }
+                } else { array[row][coulum] = 0 }
+            }
+        }
+        determinant = 0
+        s = -1
+        determinant = determinantArray(array, size)
+        performSegue(withIdentifier: "BackSegue", sender: self)
     }
 
-    //не обязательно использовать этот метод, он нужен что бы выполнение было перед созданием
+    //перед созданием
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //переопределение ячеек для повторного использования
-       // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        super.viewWillAppear(true)
         arrayFiling()
-       // print(determinantArray(array, size))
-    }
-    
-  /*  override func viewWillDisappear(_ animated: Bool) {
-        usedBegin = false
-        super.viewWillDisappear(animated)
-       // self.collectionView!.reloadData()
-        print(determinantArray(array, size))
-        //var destinationVC = UIStoryboardSegue.destination as! ViewController
-        //destinationVC??.determinant = determinant
-        //performSegue(withIdentifier: "BackSegue", sender: self)
-    }*/
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        emptyCreateArray()
         let layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         //размер экрана
         let width = Float(self.collectionView!.frame.width)
@@ -62,39 +58,20 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        
-        if usedBegin == true {
+        arrayOfElement[indexPath.row] = cell
             if indexPath.row != 0 {
-                cell.elementMatrixField.text = "\(array[indexPath.row / size][indexPath.row % size])"
-            } else {
-                cell.elementMatrixField.text = "\(array[0][0])"
-            }
-        } else {
-            print(indexPath.row)
-            if size != 1 {
-                if indexPath.row == 0 {
-                    array[0][0] = Int(cell.elementMatrixField.text!)!
-                } else {
+                if usedBegin == false {
                     array[indexPath.row / size][indexPath.row % size] = Int(cell.elementMatrixField.text!)!
+                } else {
+                    cell.elementMatrixField.text = "\(array[indexPath.row / size][indexPath.row % size])"
                 }
-                if indexPath.row == size*size - 1 {
-                    print(determinantArray(array, size))
-                    print(array)
-                    performSegue(withIdentifier: "BackSegue", sender: self)
-                }
-                //cell.elementMatrixField.text = "\(array[indexPath.row / size][indexPath.row % size])"
             } else {
-                array[0][0] = Int(cell.elementMatrixField.text!)!
-                print(determinantArray(array, size))
-                performSegue(withIdentifier: "BackSegue", sender: self)
-                //cell.elementMatrixField.text = "\(array[0][0])"
+                    cell.elementMatrixField.text = "\(array[0][0])"
             }
-        }
 
-        
-        
         return cell
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BackSegue" {
@@ -106,8 +83,14 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
         }
     }
     
+    func emptyCreateArray() {
+        for _ in 0..<(size * size) {
+            arrayOfElement.append(nil)
+        }
+    }
+    
     func arrayFiling() {
-        for row in 0..<size {
+        for row in 0..<(size) {
             array.append([Int]())
             for _ in 0..<size {
                 array[row].append(Int(arc4random_uniform(40)) - 20)

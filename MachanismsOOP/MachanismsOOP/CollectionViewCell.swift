@@ -11,6 +11,16 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var elementMatrixField: UITextField!
-    // @IBOutlet weak var elementMatrixLabel: UILabel!
+    
+    @IBAction func elementMatrixField(_ sender: UITextField) {
+        sender.text = ""
+    }
+    
+    @IBAction func elementMatrixEndField(_ sender: UITextField) {
+        if let element: Int = Int(sender.text ?? "") {
+            if element < 10000 && element > -10000 {
+            } else { sender.text = "0" }
+        } else { sender.text = "0" }
+    }
     
 }

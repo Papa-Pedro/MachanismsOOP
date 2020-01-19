@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     @IBAction func inputSizeButton(_ sender: UIButton) {
         if let size1: Int = Int(sizeMatrixField.text ?? "") {
-            if size1 < 5 {
+            if size1 < 5 && size1 > 0 {
                 size = size1
                 performSegue(withIdentifier: "ShowSegue", sender: self)
             }
@@ -43,7 +43,6 @@ class ViewController: UIViewController {
             determinantLabel.text = ""
             sizeMatrixField.text = "Введите размер"
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
