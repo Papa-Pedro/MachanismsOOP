@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Number One View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MachanismsOOP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NumberOneViewController" customModule="MachanismsOOP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,6 +75,7 @@
                         <outlet property="inputSizeButton" destination="jgX-JA-son" id="fhq-iC-9l5"/>
                         <outlet property="sizeMatrixField" destination="zHD-Jq-yWL" id="e4T-4M-Zm6"/>
                         <outlet property="sizeMatrixLabel" destination="HPg-xU-Gjh" id="oee-So-yGl"/>
+                        <outlet property="titulDeterminantLabel" destination="P04-A2-Kqp" id="W12-es-iGE"/>
                         <segue destination="Q1m-bY-tqe" kind="presentation" identifier="ShowSegue" id="Q0O-3j-W4Y"/>
                     </connections>
                 </viewController>
@@ -181,6 +182,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Q0O-3j-W4Y"/>
         <segue reference="JHc-UZ-Vvr"/>
     </inferredMetricsTieBreakers>
 </document>
