@@ -10,12 +10,10 @@ struct WorkWithMatrix {
     
     var size: Int
     var determinant: Int
-    var s: Int
     
     init (_ size: Int, _ determinant: Int, _ s: Int){
         self.size = size
         self.determinant = determinant
-        self.s = s
     }
 
     
@@ -33,17 +31,17 @@ struct WorkWithMatrix {
     }
     
     mutating func determinantArray(_ arrayFunc: [[Int]], _ sizeMatrix: Int) -> Int {
+        var s = 1
         var minorArray: [[Int]] = []
         switch sizeMatrix {
         case 1:
-            determinant = arrayFunc[0][0]
             return arrayFunc[0][0]
         case 2:
-            determinant = arrayFunc[0][0] * arrayFunc[1][1] - arrayFunc[1][0] * arrayFunc[0][1]
-            return arrayFunc[0][0] * arrayFunc[1][1] - arrayFunc[1][0] * arrayFunc[0][1]
+            return  (arrayFunc[0][0] * arrayFunc[1][1] - arrayFunc[1][0] * arrayFunc[0][1])
         default:
+            determinant = 0
             for i in 0..<sizeMatrix {
-                s *= -1
+                minorArray.removeAll()
                 var counter = 0
                 for row in 0..<sizeMatrix {
                     if row != i {
@@ -54,11 +52,14 @@ struct WorkWithMatrix {
                         counter += 1
                     }
                 }
-                determinant = determinant + arrayFunc[i][0] * s * determinantArray(minorArray, sizeMatrix-1/* &determinant,*/)
+                determinant = determinant + arrayFunc[i][0] * s * determinantArray(minorArray, sizeMatrix-1)
+                s *= -1
             }
             return determinant
         }
+        
     }
+    
     
 }
 
@@ -69,10 +70,10 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
     var size: Int = 0
     var arrayOfCell = [CollectionViewCell?]()
     var determinant: Int = 0
-    var s = -1
+    var s = 1
     
     @IBAction func cancel(_ sender: Any) {
-        var workWithMatrix = WorkWithMatrix(size, 0, -1)
+        var workWithMatrix = WorkWithMatrix(size, 0, 1)
         determinant = workWithMatrix.determinantArray(workWithMatrix.arrayFiling(array: arrayOfCell), size)
         performSegue(withIdentifier: "BackSegue", sender: self)
     }
