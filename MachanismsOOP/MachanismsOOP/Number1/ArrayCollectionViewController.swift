@@ -17,7 +17,7 @@ struct WorkWithMatrix {
     var size: Int
     var determinant: Int
     
-    init (_ size: Int, _ determinant: Int, _ s: Int){
+    init (_ size: Int, _ determinant: Int){
         self.size = size
         self.determinant = determinant
     }
@@ -71,17 +71,14 @@ struct WorkWithMatrix {
 
 class ArrayCollectionViewController: UICollectionViewController {//}, UITextFieldDelegate {
     
-    var delegate: GetDeterminantDelegate? //делегатом будет тот, кто выполняет данный протокол
     
-    var size: Int = 0
+    var delegate: GetDeterminantDelegate? //делегатом будет тот, кто выполняет данный протокол
+    var matrixVariable = MatrixVariables(size: 0)
     var arrayOfCell = [CollectionViewCell?]()
-    var determinant: Int = 0
-    var s = 1
     
     @IBAction func cancel(_ sender: Any) {
-        var workWithMatrix = WorkWithMatrix(size, 0, 1)
-        determinant = workWithMatrix.determinantArray(workWithMatrix.arrayFiling(array: arrayOfCell), size)
-        delegate?.getDeterminantCollectionViewController(self, determinant) //делегируем 
+        var workWithMatrix = WorkWithMatrix(matrixVariable.size, 0)
+        delegate?.getDeterminantCollectionViewController(self, workWithMatrix.determinantArray(workWithMatrix.arrayFiling(array: arrayOfCell), matrixVariable.size)) //делегируем
     }
     //перед созданием
     override func viewWillAppear(_ animated: Bool) {
@@ -93,11 +90,11 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
         //отступ между ячейками
         layout.minimumInteritemSpacing = 10
         //размер ячеек
-        layout.itemSize.width = CGFloat(width / Float(size + 1) - 10)
+        layout.itemSize.width = CGFloat(width / Float(matrixVariable.size + 1) - 10)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return size*size
+        return matrixVariable.size * matrixVariable.size
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -114,7 +111,7 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
     }
     
     func emptyCreateArray() {
-        for _ in 0..<(size * size) {
+        for _ in 0..<(matrixVariable.size * matrixVariable.size) {
             arrayOfCell.append(nil)
         }
     }

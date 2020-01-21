@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2226014123D76FE500A261AD /* MatrixVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226014023D76FE500A261AD /* MatrixVariables.swift */; };
 		2268A25823C8B1F700A45046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268A25723C8B1F700A45046 /* AppDelegate.swift */; };
 		2268A25A23C8B1F700A45046 /* NumberOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268A25923C8B1F700A45046 /* NumberOneViewController.swift */; };
 		2268A25D23C8B1F700A45046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2268A25B23C8B1F700A45046 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2226014023D76FE500A261AD /* MatrixVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixVariables.swift; sourceTree = "<group>"; };
 		2268A25423C8B1F700A45046 /* MachanismsOOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachanismsOOP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2268A25723C8B1F700A45046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2268A25923C8B1F700A45046 /* NumberOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOneViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				2268A25923C8B1F700A45046 /* NumberOneViewController.swift */,
 				2268A28723C8BA4B00A45046 /* ArrayCollectionViewController.swift */,
 				2268A28923C8C50200A45046 /* CollectionViewCell.swift */,
+				2226014023D76FE500A261AD /* MatrixVariables.swift */,
 			);
 			path = Number1;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2226014123D76FE500A261AD /* MatrixVariables.swift in Sources */,
 				2268A25A23C8B1F700A45046 /* NumberOneViewController.swift in Sources */,
 				2268A28823C8BA4B00A45046 /* ArrayCollectionViewController.swift in Sources */,
 				2268A28A23C8C50200A45046 /* CollectionViewCell.swift in Sources */,

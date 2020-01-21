@@ -10,33 +10,30 @@ import UIKit
 
 class NumberOneViewController: UIViewController, GetDeterminantDelegate {
     
+    var matrixVariables = MatrixVariables(size: 0)
+    
     func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int) {
         dismiss(animated: true, completion: nil)
         titulDeterminantLabel.isHidden = false
         determinantLabel.text = "\(determinant)"
-        sizeMatrixField.text = "\(size)"
+        sizeMatrixField.text = "\(matrixVariables.size)"
     }
     
-    
-    var size: Int = 0
-    var determinant: Int?
-    var array: [[Int]] = []
-    
-    
+    // MARK: - Outlet
     @IBOutlet weak var titulDeterminantLabel: UILabel!
     @IBOutlet weak var determinantLabel: UILabel!
     @IBOutlet weak var sizeMatrixLabel: UILabel!
     @IBOutlet weak var sizeMatrixField: UITextField!
+    @IBOutlet weak var inputSizeButton: UIButton!
+    // MARK: - Actioon
     @IBAction func sizeMatrixField(_ sender: Any) {
         sizeMatrixField.text = ""
     }
-    @IBOutlet weak var inputSizeButton: UIButton!
-    
     @IBAction func inputSizeButton(_ sender: UIButton) {
-        if let size1: Int = Int(sizeMatrixField.text ?? "") {
-            switch size1 {
+        if let size: Int = Int(sizeMatrixField.text ?? "") {
+            switch size {
             case 1..<5:
-                size = size1
+                matrixVariables.size = size
                 performSegue(withIdentifier: "ShowSegue", sender: self)
             case ...0:
                 sizeMatrixLabel.text = "Не бывает таких матриц"
@@ -58,7 +55,7 @@ class NumberOneViewController: UIViewController, GetDeterminantDelegate {
         {
             let destinationNC = segue.destination as! UINavigationController
             let destinationVC = destinationNC.topViewController as! ArrayCollectionViewController
-            destinationVC.size = size
+            destinationVC.matrixVariable.size = matrixVariables.size
             destinationVC.delegate = self //говорим, я буду делегатом от destinationVC
         }
     }
