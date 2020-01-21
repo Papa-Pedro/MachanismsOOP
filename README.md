@@ -5,10 +5,10 @@ protocol MatrixTestable
 
     // Constructor
     // dimension: Matrix size
-    // elementConstructor: Closure with input element row and column, which return the element Int value.
-    init(dimension: Int, elementConstructor: ((_ column: Int, _ row: Int) -> Int))
+    init(dimension: Int)
     // Determinant calculating function
     func determinant() -> Int
+    
 Задание№2:
 Реализовать перечисление кодов состояния http (10 любых) с исходным значением кода ошибки и хранимым значением описания ошибки
 
