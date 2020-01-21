@@ -6,6 +6,12 @@
 //  Copyright © 2020 TimFerens. All rights reserved.
 //
 
+import UIKit
+
+protocol GetDeterminantDelegate {
+    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int)
+}
+
 struct WorkWithMatrix {
     
     var size: Int
@@ -63,9 +69,9 @@ struct WorkWithMatrix {
     
 }
 
-import UIKit
-
 class ArrayCollectionViewController: UICollectionViewController {//}, UITextFieldDelegate {
+    
+    var delegate: GetDeterminantDelegate? //делегатом будет тот, кто выполняет данный протокол
     
     var size: Int = 0
     var arrayOfCell = [CollectionViewCell?]()
@@ -75,7 +81,7 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
     @IBAction func cancel(_ sender: Any) {
         var workWithMatrix = WorkWithMatrix(size, 0, 1)
         determinant = workWithMatrix.determinantArray(workWithMatrix.arrayFiling(array: arrayOfCell), size)
-        performSegue(withIdentifier: "BackSegue", sender: self)
+        delegate?.getDeterminantCollectionViewController(self, determinant) //делегируем 
     }
     //перед созданием
     override func viewWillAppear(_ animated: Bool) {
@@ -105,16 +111,6 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
             }
 
         return cell
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "BackSegue" {
-            if let destinationVC = segue.destination as? NumberOneViewController {
-                destinationVC.determinant = determinant
-                destinationVC.size = size
-            }
-        }
     }
     
     func emptyCreateArray() {

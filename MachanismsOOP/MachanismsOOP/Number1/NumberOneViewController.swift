@@ -8,7 +8,15 @@
 
 import UIKit
 
-class NumberOneViewController: UIViewController {
+class NumberOneViewController: UIViewController, GetDeterminantDelegate {
+    
+    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int) {
+        dismiss(animated: true, completion: nil)
+        titulDeterminantLabel.isHidden = false
+        determinantLabel.text = "\(determinant)"
+        sizeMatrixField.text = "\(size)"
+    }
+    
     
     var size: Int = 0
     var determinant: Int?
@@ -40,15 +48,9 @@ class NumberOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if determinant != nil {
-            titulDeterminantLabel.isHidden = false
-            determinantLabel.text = "\(String(describing: determinant!) )"
-            sizeMatrixField.text = "\(size)"
-        } else {
             titulDeterminantLabel.isHidden = true
             determinantLabel.text = ""
             sizeMatrixField.text = "___"
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,6 +59,7 @@ class NumberOneViewController: UIViewController {
             let destinationNC = segue.destination as! UINavigationController
             let destinationVC = destinationNC.topViewController as! ArrayCollectionViewController
             destinationVC.size = size
+            destinationVC.delegate = self //говорим, я буду делегатом от destinationVC
         }
     }
 }

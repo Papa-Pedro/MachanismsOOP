@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-JA-son">
-                                <rect key="frame" x="169" y="328.5" width="36" height="30"/>
+                                <rect key="frame" x="169" y="350.5" width="36" height="30"/>
                                 <state key="normal" title="Ввод"/>
                                 <connections>
                                     <action selector="inputSizeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m3e-fj-ceP"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-Jq-yWL">
-                                <rect key="frame" x="175" y="293.5" width="25" height="30"/>
+                                <rect key="frame" x="175" y="315.5" width="25" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -35,19 +35,19 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите размер квадратной матрицы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-xU-Gjh">
-                                <rect key="frame" x="51" y="270.5" width="273" height="18"/>
+                                <rect key="frame" x="51" y="292.5" width="273" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-25-jIs">
-                                <rect key="frame" x="166" y="399.5" width="42" height="21"/>
+                                <rect key="frame" x="166" y="421.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Определитель матрицы:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P04-A2-Kqp">
-                                <rect key="frame" x="89" y="368.5" width="197" height="21"/>
+                                <rect key="frame" x="89" y="390.5" width="197" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -138,13 +138,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="BackSegue" id="JHc-UZ-Vvr"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAo-Ay-3dD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="1128.4857571214393"/>
+            <point key="canvasLocation" x="2625" y="348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n8Y-uW-CAR">
@@ -160,11 +157,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXS-Bx-muk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="331"/>
+            <point key="canvasLocation" x="-108" y="348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pXv-fq-XaE">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFh-KD-XbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q1m-bY-tqe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="URR-zW-Don">
@@ -176,13 +174,8 @@
                         <segue destination="d6R-BG-PgQ" kind="relationship" relationship="rootViewController" id="dLK-dp-yAa"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UFh-KD-XbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1759" y="348"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Q0O-3j-W4Y"/>
-        <segue reference="JHc-UZ-Vvr"/>
-    </inferredMetricsTieBreakers>
 </document>

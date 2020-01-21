@@ -358,11 +358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
-            timestampString = "601301173.159682"
+            timestampString = "601309712.433085"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "determinantArray(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -374,11 +374,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
-            timestampString = "601301173.2077481"
+            timestampString = "601309712.433924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "determinantArray(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -390,11 +390,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
-            timestampString = "601301173.208403"
+            timestampString = "601309712.434518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "determinantArray(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -406,13 +406,263 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
-            timestampString = "601301173.209179"
+            timestampString = "601309712.435119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "determinantArray(_:_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
+            timestampString = "601309712.4357769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "cancel(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MachanismsOOP/Number1/NumberOneViewController.swift"
+            timestampString = "601309712.436569"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "getDeterminantCollectionViewController(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MachanismsOOP/Number1/NumberOneViewController.swift"
+            timestampString = "601309712.436695"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.__deallocating_deinit"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601307635.042773"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MachanismsOOP.NumberOneViewController"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601307635.04942"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MachanismsOOP.NumberOneViewController"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601307635.05504"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "63">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;MachanismsOOP.NumberOneViewController&gt;"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601307635.061004"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;MachanismsOOP.NumberOneViewController&gt;"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601307635.072718"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MachanismsOOP/Number1/NumberOneViewController.swift"
+            timestampString = "601309712.436839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "NumberOneViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.__deallocating_deinit"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601308025.980981"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MachanismsOOP.NumberOneViewController"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601308025.987264"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MachanismsOOP.NumberOneViewController"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601308026.052662"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "63">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;MachanismsOOP.NumberOneViewController&gt;"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601308026.0608211"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MachanismsOOP.NumberOneViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;MachanismsOOP.NumberOneViewController&gt;"
+                  moduleName = "MachanismsOOP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tim/Desktop/MachanismsOOP/MachanismsOOP/Number1/NumberOneViewController.swift"
+                  timestampString = "601308026.067511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MachanismsOOP/Number1/NumberOneViewController.swift"
+            timestampString = "601309712.436993"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "NumberOneViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
+            timestampString = "601309712.437126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "ArrayCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
