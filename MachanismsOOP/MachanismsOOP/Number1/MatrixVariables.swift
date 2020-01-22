@@ -10,9 +10,8 @@ import Foundation
 
 class MatrixVariables {
     
-    var size: Int
-    
-    init(size: Int) {
-        self.size = size
-    }
+    var size: Int = 0
+    var arrayOfCell = [CollectionViewCell?]()
+    var determinant: Int = 0
+
 }

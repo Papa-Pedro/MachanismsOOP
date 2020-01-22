@@ -10,7 +10,7 @@ import UIKit
 
 class NumberOneViewController: UIViewController, GetDeterminantDelegate {
     
-    var matrixVariables = MatrixVariables(size: 0)
+    var matrixVariables = MatrixVariables()
     
     func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int) {
         dismiss(animated: true, completion: nil)

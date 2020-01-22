@@ -14,30 +14,16 @@ protocol GetDeterminantDelegate {
 
 struct WorkWithMatrix {
     
-    var size: Int
+    var matrixVariable = MatrixVariables()
     var determinant: Int
     
-    init (_ size: Int, _ determinant: Int){
-        self.size = size
+    init (size matrixVariable: MatrixVariables, _ determinant: Int){
+        self.matrixVariable = matrixVariable
         self.determinant = determinant
     }
 
-    
-    func arrayFiling(array arrayOfCell: [CollectionViewCell?] ) -> [[Int]] {
-        var array: [[Int]] = []
-        for row in 0..<(size) {
-            array.append([Int]())
-            for coulum in 0..<size {
-                var element: Int = Int(arrayOfCell[coulum + row * size]?.elementMatrixField.text ?? "0") ?? 0
-                if element > 5000 && element < -5000 { element = 0 }
-                array[row].append(element)
-            }
-        }
-        return array
-    }
-    
     mutating func determinantArray(_ arrayFunc: [[Int]], _ sizeMatrix: Int) -> Int {
-        var s = 1
+        var sign = 1
         var minorArray: [[Int]] = []
         switch sizeMatrix {
         case 1:
@@ -58,8 +44,8 @@ struct WorkWithMatrix {
                         counter += 1
                     }
                 }
-                determinant = determinant + arrayFunc[i][0] * s * determinantArray(minorArray, sizeMatrix-1)
-                s *= -1
+                determinant = determinant + arrayFunc[i][0] * sign * determinantArray(minorArray, sizeMatrix-1)
+                sign *= -1
             }
             return determinant
         }
@@ -73,17 +59,19 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
     
     
     var delegate: GetDeterminantDelegate? //делегатом будет тот, кто выполняет данный протокол
-    var matrixVariable = MatrixVariables(size: 0)
-    var arrayOfCell = [CollectionViewCell?]()
+    
+    var matrixVariable = MatrixVariables()
+    var createElementsOfMatrix = CreateElementsOfMatrix()
     
     @IBAction func cancel(_ sender: Any) {
-        var workWithMatrix = WorkWithMatrix(matrixVariable.size, 0)
-        delegate?.getDeterminantCollectionViewController(self, workWithMatrix.determinantArray(workWithMatrix.arrayFiling(array: arrayOfCell), matrixVariable.size)) //делегируем
+        var workWithMatrix = WorkWithMatrix(size: matrixVariable, 0)
+        matrixVariable.determinant = workWithMatrix.determinantArray(createElementsOfMatrix.filingArray(array: matrixVariable.arrayOfCell, size: matrixVariable.size), matrixVariable.size)
+        delegate?.getDeterminantCollectionViewController(self, matrixVariable.determinant) //делегируем
     }
     //перед созданием
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        emptyCreateArray()
+        //matrixVariable.arrayOfCell = createElementsOfMatrix.createEmptyArreay(size: matrixVariable.size)
         let layout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         //размер экрана
         let width = Float(self.collectionView!.frame.width)
@@ -100,7 +88,7 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        arrayOfCell[indexPath.row] = cell
+        matrixVariable.arrayOfCell.append(cell)//[indexPath.row] = cell
             if indexPath.row != 0 {
                 cell.elementMatrixField.text = "\(Int(arc4random_uniform(40)) - 20)"
             } else {
@@ -108,12 +96,6 @@ class ArrayCollectionViewController: UICollectionViewController {//}, UITextFiel
             }
 
         return cell
-    }
-    
-    func emptyCreateArray() {
-        for _ in 0..<(matrixVariable.size * matrixVariable.size) {
-            arrayOfCell.append(nil)
-        }
     }
     
 }
