@@ -11,7 +11,9 @@ import Foundation
 class MatrixVariables {
     
     var size: Int = 0
-    var arrayOfCell = [CollectionViewCell?]()
+    var arrayOfElements = [[Int]]()
     var determinant: Int = 0
+    var maxElement: Int = 5000
+    var minElement: Int = -5000
 
 }

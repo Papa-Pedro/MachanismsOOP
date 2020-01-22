@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22238EF523D8586200BAF178 /* CreateElementsOfMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22238EF423D8586200BAF178 /* CreateElementsOfMatrix.swift */; };
 		22238EF723D873DB00BAF178 /* WorkWithMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22238EF623D873DB00BAF178 /* WorkWithMatrix.swift */; };
 		2226014123D76FE500A261AD /* MatrixVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226014023D76FE500A261AD /* MatrixVariables.swift */; };
 		2268A25823C8B1F700A45046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268A25723C8B1F700A45046 /* AppDelegate.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22238EF423D8586200BAF178 /* CreateElementsOfMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateElementsOfMatrix.swift; sourceTree = "<group>"; };
 		22238EF623D873DB00BAF178 /* WorkWithMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithMatrix.swift; sourceTree = "<group>"; };
 		2226014023D76FE500A261AD /* MatrixVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixVariables.swift; sourceTree = "<group>"; };
 		2268A25423C8B1F700A45046 /* MachanismsOOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachanismsOOP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,7 +88,6 @@
 				2268A25923C8B1F700A45046 /* NumberOneViewController.swift */,
 				2268A28723C8BA4B00A45046 /* ArrayCollectionViewController.swift */,
 				2226014023D76FE500A261AD /* MatrixVariables.swift */,
-				22238EF423D8586200BAF178 /* CreateElementsOfMatrix.swift */,
 				22238EF623D873DB00BAF178 /* WorkWithMatrix.swift */,
 				2268A28923C8C50200A45046 /* CollectionViewCell.swift */,
 			);
@@ -282,7 +279,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22238EF523D8586200BAF178 /* CreateElementsOfMatrix.swift in Sources */,
 				22238EF723D873DB00BAF178 /* WorkWithMatrix.swift in Sources */,
 				2226014123D76FE500A261AD /* MatrixVariables.swift in Sources */,
 				2268A25A23C8B1F700A45046 /* NumberOneViewController.swift in Sources */,

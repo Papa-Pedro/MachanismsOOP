@@ -14,16 +14,16 @@ protocol GetDeterminantDelegate {
 
 class ArrayCollectionViewController: UICollectionViewController {
     
-    var delegate: GetDeterminantDelegate? //делегатом будет тот, кто выполняет данный протокол
+    var arrayOfCell = [CollectionViewCell?]()
     
+    var delegate: GetDeterminantDelegate? //делегатом будет тот, кто выполняет данный протокол
     var matrixVariable = MatrixVariables()
-    var createElementsOfMatrix = CreateElementsOfMatrix()
     
     @IBAction func cancel(_ sender: Any) {
         let workWithMatrix = WorkWithMatrix()
-        
-        matrixVariable.determinant = workWithMatrix.determinantArray(array: createElementsOfMatrix.filingArray(array: matrixVariable.arrayOfCell, size: matrixVariable.size), sizeMatrix: matrixVariable.size)
-        
+        let collectionViewCell = CollectionViewCell()
+        matrixVariable.arrayOfElements = collectionViewCell.filingArray(array: arrayOfCell, size: matrixVariable.size)
+        matrixVariable.determinant = workWithMatrix.determinantArray(array: matrixVariable.arrayOfElements, sizeMatrix: matrixVariable.size)
         delegate?.getDeterminantCollectionViewController(self, matrixVariable.determinant) //делегируем
     }
     //перед созданием
@@ -45,7 +45,7 @@ class ArrayCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        matrixVariable.arrayOfCell.append(cell)//[indexPath.row] = cell
+        arrayOfCell.append(cell)
             if indexPath.row != 0 {
                 cell.elementMatrixField.text = "\(Int(arc4random_uniform(40)) - 20)"
             } else {
@@ -54,5 +54,7 @@ class ArrayCollectionViewController: UICollectionViewController {
 
         return cell
     }
+    
+    
     
 }

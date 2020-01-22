@@ -357,22 +357,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
-            timestampString = "601391622.286135"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/NumberOneViewController.swift"
-            timestampString = "601391622.293117"
+            timestampString = "601405870.663892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -388,7 +374,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/NumberOneViewController.swift"
-            timestampString = "601391622.294017"
+            timestampString = "601405870.66915"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
@@ -481,7 +467,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/NumberOneViewController.swift"
-            timestampString = "601391622.294794"
+            timestampString = "601405870.669314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
@@ -574,7 +560,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/NumberOneViewController.swift"
-            timestampString = "601391622.295508"
+            timestampString = "601405870.669534"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -590,39 +576,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
-            timestampString = "601391622.296237"
+            timestampString = "601405870.669837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
-            timestampString = "601391622.297533"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MachanismsOOP/Number1/ArrayCollectionViewController.swift"
-            timestampString = "601391622.298376"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "ArrayCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

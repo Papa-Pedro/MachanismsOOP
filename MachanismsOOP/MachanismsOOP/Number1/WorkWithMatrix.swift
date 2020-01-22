@@ -25,7 +25,6 @@ class WorkWithMatrix {
             
         default:
             matrixVariable.determinant = 0
-            
             for i in 0..<sizeMatrix {
                 minorArray.removeAll()
                 var counter = 0
