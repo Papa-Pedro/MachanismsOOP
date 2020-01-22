@@ -17,10 +17,11 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func elementMatrixEndField(_ sender: UITextField) {
-        if let element: Int = Int(sender.text ?? "") {
-            if element < 5000 && element > -5000 {
-            } else { sender.text = "0" }
-        } else { sender.text = "0" }
+        
+        guard let element: Int = Int(sender.text ?? ""), (element < 5000 && element > -5000)  else {
+            sender.text = "0"
+            return
+        }
     }
     
 }
