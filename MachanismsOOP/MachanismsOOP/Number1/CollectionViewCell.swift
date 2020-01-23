@@ -18,7 +18,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func elementMatrixEndField(_ sender: UITextField) {
-        guard let element: Int = Int(sender.text ?? ""), (element < matrixVariable.maxElement && element > matrixVariable.minElement)  else {
+        guard let _: Int = Int(sender.text ?? "") else {
             sender.text = "0"
             return
         }
@@ -29,8 +29,7 @@ class CollectionViewCell: UICollectionViewCell {
         for row in 0..<(size) {
             array.append([Int]())
             for coulum in 0..<size {
-                var element: Int = Int(arrayOfCell[coulum + row * size]?.elementMatrixField.text ?? "0") ?? 0
-                if element > matrixVariable.maxElement && element < matrixVariable.minElement { element = 0 }
+                let element: Int = Int(arrayOfCell[coulum + row * size]?.elementMatrixField.text ?? "0") ?? 0
                 array[row].append(element)
             }
         }

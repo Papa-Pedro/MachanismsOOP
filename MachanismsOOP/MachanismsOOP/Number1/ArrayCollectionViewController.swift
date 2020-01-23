@@ -9,15 +9,14 @@
 import UIKit
 
 protocol GetDeterminantDelegate {
-    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int)
+    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int?)
 }
 
 class ArrayCollectionViewController: UICollectionViewController {
     
-    var arrayOfCell = [CollectionViewCell?]()
-    
     var delegate: GetDeterminantDelegate? //делегатом будет тот, кто выполняет данный протокол
     var matrixVariable = MatrixVariables()
+    var arrayOfCell = [CollectionViewCell?]()
     
     @IBAction func cancel(_ sender: Any) {
         let workWithMatrix = WorkWithMatrix()

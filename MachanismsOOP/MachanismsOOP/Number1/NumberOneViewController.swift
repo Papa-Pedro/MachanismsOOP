@@ -12,10 +12,14 @@ class NumberOneViewController: UIViewController, GetDeterminantDelegate {
     
     var matrixVariables = MatrixVariables()
     
-    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int) {
+    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int?) {
         dismiss(animated: true, completion: nil)
         titulDeterminantLabel.isHidden = false
-        determinantLabel.text = "\(determinant)"
+        if determinant == nil {
+            determinantLabel.text = "слишком большой"
+        } else {
+            determinantLabel.text = "\(String(describing: determinant!))"
+        }
         sizeMatrixField.text = "\(matrixVariables.size)"
     }
     
@@ -32,7 +36,7 @@ class NumberOneViewController: UIViewController, GetDeterminantDelegate {
     @IBAction func inputSizeButton(_ sender: UIButton) {
         if let size: Int = Int(sizeMatrixField.text ?? "") {
             switch size {
-            case 1..<5:
+            case 1..<6:
                 matrixVariables.size = size
                 performSegue(withIdentifier: "ShowSegue", sender: self)
             case ...0:
