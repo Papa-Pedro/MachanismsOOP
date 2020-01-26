@@ -9,19 +9,20 @@
 import UIKit
 
 class NumberOneViewController: UIViewController, GetDeterminantDelegate {
-    
-    var matrixVariables = MatrixVariables()
-    
-    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int?) {
+    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: ResultDeterminant) {
         dismiss(animated: true, completion: nil)
         titulDeterminantLabel.isHidden = false
-        if determinant == nil {
-            determinantLabel.text = "слишком большой"
-        } else {
-            determinantLabel.text = "\(String(describing: determinant!))"
+        switch determinant {
+        case .overflow(let messange):
+            determinantLabel.text = messange
+        case .result(let determinantFinish):
+            determinantLabel.text = ("\(determinantFinish)")
         }
         sizeMatrixField.text = "\(matrixVariables.size)"
     }
+    
+    var matrixVariables = MatrixVariables()
+    var workWithMatrix = WorkWithMatrix()
     
     // MARK: - Outlet
     @IBOutlet weak var titulDeterminantLabel: UILabel!
@@ -38,6 +39,7 @@ class NumberOneViewController: UIViewController, GetDeterminantDelegate {
             switch size {
             case 1..<6:
                 matrixVariables.size = size
+                //matrixVariables.arrayOfElements = workWithMatrix.fillingRandomElement(size: size, borderAmount: 40)
                 performSegue(withIdentifier: "ShowSegue", sender: self)
             case ...0:
                 sizeMatrixLabel.text = "Не бывает таких матриц"
@@ -60,6 +62,7 @@ class NumberOneViewController: UIViewController, GetDeterminantDelegate {
             let destinationNC = segue.destination as! UINavigationController
             let destinationVC = destinationNC.topViewController as! ArrayCollectionViewController
             destinationVC.matrixVariable.size = matrixVariables.size
+            destinationVC.matrixVariable.arrayOfElements = matrixVariables.arrayOfElements
             destinationVC.delegate = self //говорим, я буду делегатом от destinationVC
         }
     }

@@ -10,31 +10,27 @@ import UIKit
 
 class WorkWithMatrix {
     
-    func determinantArray(array: [[Int]], sizeMatrix: Int) -> Int? {
+    func determinantArray(array: [[Int]], sizeMatrix: Int) -> ResultDeterminant {
         
         var sign = 1
         var minorArray: [[Int]] = []
         let matrixVariable = MatrixVariables()
-        
         if matrixVariable.determinant == nil {
-            return nil
+            return ResultDeterminant.overflow("Слишком большой")
         }
-        
         switch sizeMatrix {
         case 1:
-            return array[0][0]
-            
+            return ResultDeterminant.result(array[0][0])
         case 2:
             let resultMultiPlus = array[0][0].multipliedReportingOverflow(by: array[1][1])
             let resultMultiMinus = array[1][0].multipliedReportingOverflow(by: array[0][1])
             if resultMultiPlus.overflow == false && resultMultiMinus.overflow == false {
                 let resultSubstract = resultMultiPlus.partialValue.subtractingReportingOverflow(resultMultiMinus.partialValue)
                 if resultSubstract.overflow == false {
-                    return resultSubstract.partialValue
+                    return ResultDeterminant.result(resultSubstract.partialValue)
                 }
             }
-            return nil
-            
+            return ResultDeterminant.overflow("Слишком большой")
         default:
             matrixVariable.determinant = 0
             for i in 0..<sizeMatrix {
@@ -49,26 +45,31 @@ class WorkWithMatrix {
                         counter += 1
                     }
                 }
-                //произошло ли переполнение?
+                //подсчет минора (переполнение)
                 let resultNextStep = determinantArray(array: minorArray, sizeMatrix: sizeMatrix-1)
-                if resultNextStep != nil {
-                    let resultMinor = resultNextStep?.multipliedReportingOverflow(by: array[i][0] * sign)
-                    if resultMinor?.overflow == false {
-                        let result = resultMinor?.partialValue.addingReportingOverflow(matrixVariable.determinant!)
-                        if result?.overflow == false {
-                            matrixVariable.determinant = result?.partialValue
+                switch resultNextStep {
+                case .overflow:
+                    matrixVariable.determinant = nil
+                    return resultNextStep
+                case .result (let determinant):
+                    let resultMinor = determinant.multipliedReportingOverflow(by: array[i][0] * sign)
+                    if resultMinor.overflow == false {
+                        let result = resultMinor.partialValue.addingReportingOverflow(matrixVariable.determinant!)
+                        if result.overflow == false {
+                            matrixVariable.determinant = result.partialValue
                             sign *= -1
                         } else {
                             matrixVariable.determinant = nil
-                            return nil
+                            return ResultDeterminant.overflow("Cлишком большой!!")
                         }
+                    } else {
+                        matrixVariable.determinant = nil
+                        return ResultDeterminant.overflow("Cлишком большой!")
                     }
-                } else {
-                    matrixVariable.determinant = nil
-                    return nil
+                    return ResultDeterminant.result(matrixVariable.determinant!)
                 }
             }
-            return matrixVariable.determinant
+            return ResultDeterminant.result(matrixVariable.determinant!)
         }
     }
 }

@@ -13,3 +13,8 @@ class MatrixVariables {
     var arrayOfElements = [[Int]]()
     var determinant: Int? = 0
 }
+
+enum ResultDeterminant {
+    case result(Int)
+    case overflow(String)
+}

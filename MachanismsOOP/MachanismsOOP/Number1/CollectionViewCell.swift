@@ -35,6 +35,5 @@ class CollectionViewCell: UICollectionViewCell {
         }
         return array
     }
-    
-    
+
 }

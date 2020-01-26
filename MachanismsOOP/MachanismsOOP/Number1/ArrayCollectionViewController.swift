@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GetDeterminantDelegate {
-    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: Int?)
+    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: ResultDeterminant)
 }
 
 class ArrayCollectionViewController: UICollectionViewController {
@@ -22,8 +22,7 @@ class ArrayCollectionViewController: UICollectionViewController {
         let workWithMatrix = WorkWithMatrix()
         let collectionViewCell = CollectionViewCell()
         matrixVariable.arrayOfElements = collectionViewCell.filingArray(array: arrayOfCell, size: matrixVariable.size)
-        matrixVariable.determinant = workWithMatrix.determinantArray(array: matrixVariable.arrayOfElements, sizeMatrix: matrixVariable.size)
-        delegate?.getDeterminantCollectionViewController(self, matrixVariable.determinant) //делегируем
+        delegate?.getDeterminantCollectionViewController(self, workWithMatrix.determinantArray(array: matrixVariable.arrayOfElements, sizeMatrix: matrixVariable.size)) //делегируем
     }
     //перед созданием
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +36,7 @@ class ArrayCollectionViewController: UICollectionViewController {
         layout.itemSize.width = CGFloat(width / Float(matrixVariable.size + 1) - 10)
     }
     
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return matrixVariable.size * matrixVariable.size
     }
@@ -45,15 +45,8 @@ class ArrayCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         arrayOfCell.append(cell)
-            if indexPath.row != 0 {
-                cell.elementMatrixField.text = "\(Int(arc4random_uniform(40)) - 20)"
-            } else {
-                cell.elementMatrixField.text = "\(Int(arc4random_uniform(40)) - 20)"
-            }
+        cell.elementMatrixField.text = "\(Int(arc4random_uniform(40)) - 20)"
 
         return cell
     }
-    
-    
-    
 }
