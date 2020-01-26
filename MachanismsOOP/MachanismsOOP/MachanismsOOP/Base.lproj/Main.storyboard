@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Pl-Nd-mhK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Number One View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NumberOneViewController" customModule="MachanismsOOP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-JA-son">
+                                <rect key="frame" x="169" y="350.5" width="36" height="30"/>
+                                <state key="normal" title="Ввод"/>
+                                <connections>
+                                    <action selector="inputSizeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m3e-fj-ceP"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-Jq-yWL">
+                                <rect key="frame" x="175" y="315.5" width="25" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="sizeMatrixField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Dkw-z9-W4r"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите размер квадратной матрицы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-xU-Gjh">
+                                <rect key="frame" x="51" y="292.5" width="273" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-25-jIs">
+                                <rect key="frame" x="166" y="421.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Определитель матрицы:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P04-A2-Kqp">
+                                <rect key="frame" x="89" y="390.5" width="197" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="top" secondItem="HPg-xU-Gjh" secondAttribute="bottom" constant="5" id="4NF-XD-lGs"/>
+                            <constraint firstItem="Pph-25-jIs" firstAttribute="top" secondItem="P04-A2-Kqp" secondAttribute="bottom" constant="10" id="7Rj-HJ-V3u"/>
+                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7Yn-Cl-0Kf"/>
+                            <constraint firstItem="jgX-JA-son" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ast-Bl-VMS"/>
+                            <constraint firstItem="P04-A2-Kqp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MES-ug-e8e"/>
+                            <constraint firstItem="jgX-JA-son" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Q1z-4E-jaO"/>
+                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UK3-Sh-UlX"/>
+                            <constraint firstItem="Pph-25-jIs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Z00-7j-bmX"/>
+                            <constraint firstItem="jgX-JA-son" firstAttribute="top" secondItem="zHD-Jq-yWL" secondAttribute="bottom" constant="5" id="thA-mY-p4O"/>
+                            <constraint firstItem="HPg-xU-Gjh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="viZ-z6-HGc"/>
+                            <constraint firstItem="P04-A2-Kqp" firstAttribute="top" secondItem="jgX-JA-son" secondAttribute="bottom" constant="10" id="xm0-RU-Ior"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yjn-Sc-uz1"/>
+                    <connections>
+                        <outlet property="determinantLabel" destination="Pph-25-jIs" id="zpS-xe-WVJ"/>
+                        <outlet property="inputSizeButton" destination="jgX-JA-son" id="fhq-iC-9l5"/>
+                        <outlet property="sizeMatrixField" destination="zHD-Jq-yWL" id="e4T-4M-Zm6"/>
+                        <outlet property="sizeMatrixLabel" destination="HPg-xU-Gjh" id="oee-So-yGl"/>
+                        <outlet property="titulDeterminantLabel" destination="P04-A2-Kqp" id="W12-es-iGE"/>
+                        <segue destination="Q1m-bY-tqe" kind="presentation" identifier="ShowSegue" id="Q0O-3j-W4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="350"/>
+        </scene>
+        <!--Array Collection View Controller-->
+        <scene sceneID="Q0h-xr-CCC">
+            <objects>
+                <collectionViewController id="d6R-BG-PgQ" customClass="ArrayCollectionViewController" customModule="MachanismsOOP" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qN3-rw-qXF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AvV-Ue-OcT">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="zX6-bn-XtQ" customClass="CollectionViewCell" customModule="MachanismsOOP" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFm-6E-wPF">
+                                            <rect key="frame" x="37" y="35" width="25" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="elementMatrixEndField:" destination="zX6-bn-XtQ" eventType="editingDidEnd" id="1js-Ic-FdT"/>
+                                                <action selector="elementMatrixField:" destination="zX6-bn-XtQ" eventType="editingDidBegin" id="Njr-df-fuw"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="gFm-6E-wPF" firstAttribute="centerX" secondItem="zX6-bn-XtQ" secondAttribute="centerX" id="4SG-4g-R3V"/>
+                                    <constraint firstItem="gFm-6E-wPF" firstAttribute="centerY" secondItem="zX6-bn-XtQ" secondAttribute="centerY" id="ue4-yC-x76"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="elementMatrixField" destination="gFm-6E-wPF" id="CfT-gO-dj1"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="d6R-BG-PgQ" id="6jp-jD-7gX"/>
+                            <outlet property="delegate" destination="d6R-BG-PgQ" id="t2r-QX-1p5"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="9SY-Jf-qnW">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="HM1-ur-IFo">
+                            <connections>
+                                <action selector="cancel:" destination="d6R-BG-PgQ" id="EcF-98-1jk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAo-Ay-3dD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2625" y="348"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n8Y-uW-CAR">
+            <objects>
+                <navigationController id="3Pl-Nd-mhK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vSL-ME-Vf4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WLf-uC-pKO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXS-Bx-muk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-108" y="348"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pXv-fq-XaE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFh-KD-XbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q1m-bY-tqe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="URR-zW-Don">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d6R-BG-PgQ" kind="relationship" relationship="rootViewController" id="dLK-dp-yAa"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1759" y="348"/>
+        </scene>
+    </scenes>
+</document>
