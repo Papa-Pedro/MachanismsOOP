@@ -62,11 +62,7 @@ class WorkWithMatrix {
                             matrixVariable.determinant = nil
                             return ResultDeterminant.overflow("Cлишком большой!!")
                         }
-                    } else {
-                        matrixVariable.determinant = nil
-                        return ResultDeterminant.overflow("Cлишком большой!")
                     }
-                    return ResultDeterminant.result(matrixVariable.determinant!)
                 }
             }
             return ResultDeterminant.result(matrixVariable.determinant!)

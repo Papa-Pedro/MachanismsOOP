@@ -19,10 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-JA-son">
-                                <rect key="frame" x="169" y="350.5" width="36" height="30"/>
-                                <state key="normal" title="Ввод"/>
+                                <rect key="frame" x="100" y="385.5" width="175" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="Zrb-bz-rAI"/>
+                                </constraints>
+                                <state key="normal" title="Сгенерировать матрицу"/>
                                 <connections>
-                                    <action selector="inputSizeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m3e-fj-ceP"/>
+                                    <action selector="createRandomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qY2-5i-kTj"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-Jq-yWL">
@@ -36,43 +39,63 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите размер квадратной матрицы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-xU-Gjh">
                                 <rect key="frame" x="51" y="292.5" width="273" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="273" id="mxb-Pl-a08"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-25-jIs">
-                                <rect key="frame" x="166" y="421.5" width="42" height="21"/>
+                                <rect key="frame" x="166" y="446.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Определитель матрицы:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P04-A2-Kqp">
-                                <rect key="frame" x="89" y="390.5" width="197" height="21"/>
+                                <rect key="frame" x="89" y="420.5" width="197" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="XjL-zA-a4A"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qug-rl-TLA">
+                                <rect key="frame" x="107" y="350.5" width="161" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="Cbe-yz-j3l"/>
+                                </constraints>
+                                <state key="normal" title="Просмотреть матрицу"/>
+                                <connections>
+                                    <action selector="lookMatrixButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EOJ-vN-5o2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="top" secondItem="HPg-xU-Gjh" secondAttribute="bottom" constant="5" id="4NF-XD-lGs"/>
-                            <constraint firstItem="Pph-25-jIs" firstAttribute="top" secondItem="P04-A2-Kqp" secondAttribute="bottom" constant="10" id="7Rj-HJ-V3u"/>
-                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7Yn-Cl-0Kf"/>
-                            <constraint firstItem="jgX-JA-son" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ast-Bl-VMS"/>
-                            <constraint firstItem="P04-A2-Kqp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MES-ug-e8e"/>
-                            <constraint firstItem="jgX-JA-son" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Q1z-4E-jaO"/>
-                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UK3-Sh-UlX"/>
-                            <constraint firstItem="Pph-25-jIs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Z00-7j-bmX"/>
-                            <constraint firstItem="jgX-JA-son" firstAttribute="top" secondItem="zHD-Jq-yWL" secondAttribute="bottom" constant="5" id="thA-mY-p4O"/>
-                            <constraint firstItem="HPg-xU-Gjh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="viZ-z6-HGc"/>
-                            <constraint firstItem="P04-A2-Kqp" firstAttribute="top" secondItem="jgX-JA-son" secondAttribute="bottom" constant="10" id="xm0-RU-Ior"/>
+                            <constraint firstItem="Pph-25-jIs" firstAttribute="top" secondItem="P04-A2-Kqp" secondAttribute="bottom" constant="5" id="3Rq-nM-Aco"/>
+                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bwy-9j-Rki"/>
+                            <constraint firstItem="qug-rl-TLA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="C5W-BU-adv"/>
+                            <constraint firstItem="P04-A2-Kqp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="D8w-Hd-uXB"/>
+                            <constraint firstItem="P04-A2-Kqp" firstAttribute="top" secondItem="jgX-JA-son" secondAttribute="bottom" constant="5" id="EEm-jy-0UR"/>
+                            <constraint firstItem="Pph-25-jIs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IJf-PB-oPG"/>
+                            <constraint firstItem="HPg-xU-Gjh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Jgu-7M-r2l"/>
+                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="top" secondItem="HPg-xU-Gjh" secondAttribute="bottom" constant="5" id="Uj6-0P-Iw5"/>
+                            <constraint firstItem="Pph-25-jIs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wan-QV-YI1"/>
+                            <constraint firstItem="qug-rl-TLA" firstAttribute="top" secondItem="zHD-Jq-yWL" secondAttribute="bottom" constant="5" id="XQV-T6-Ak4"/>
+                            <constraint firstItem="qug-rl-TLA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jsd-P9-fYb"/>
+                            <constraint firstItem="jgX-JA-son" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pfy-O8-JV0"/>
+                            <constraint firstItem="jgX-JA-son" firstAttribute="top" secondItem="qug-rl-TLA" secondAttribute="bottom" constant="5" id="t0p-PG-Fgs"/>
+                            <constraint firstItem="zHD-Jq-yWL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tP1-o7-IcH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yjn-Sc-uz1"/>
                     <connections>
+                        <outlet property="createRandomButton" destination="jgX-JA-son" id="IYl-Uc-bvs"/>
                         <outlet property="determinantLabel" destination="Pph-25-jIs" id="zpS-xe-WVJ"/>
-                        <outlet property="inputSizeButton" destination="jgX-JA-son" id="fhq-iC-9l5"/>
+                        <outlet property="lookMatrixButton" destination="qug-rl-TLA" id="fde-JT-JGA"/>
                         <outlet property="sizeMatrixField" destination="zHD-Jq-yWL" id="e4T-4M-Zm6"/>
                         <outlet property="sizeMatrixLabel" destination="HPg-xU-Gjh" id="oee-So-yGl"/>
                         <outlet property="titulDeterminantLabel" destination="P04-A2-Kqp" id="W12-es-iGE"/>
@@ -162,7 +185,6 @@
         <!--Navigation Controller-->
         <scene sceneID="pXv-fq-XaE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UFh-KD-XbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q1m-bY-tqe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="URR-zW-Don">
@@ -174,6 +196,7 @@
                         <segue destination="d6R-BG-PgQ" kind="relationship" relationship="rootViewController" id="dLK-dp-yAa"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFh-KD-XbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1759" y="348"/>
         </scene>

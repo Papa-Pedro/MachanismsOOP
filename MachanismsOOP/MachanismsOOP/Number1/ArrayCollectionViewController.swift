@@ -8,21 +8,20 @@
 
 import UIKit
 
-protocol GetDeterminantDelegate {
-    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: ResultDeterminant)
+protocol ArrayCollectionControllerDelegate {
+    func getDeterminant(_ controller: ArrayCollectionViewController, determinant: ResultDeterminant, array: [[Int]])
 }
 
 class ArrayCollectionViewController: UICollectionViewController {
     
-    var delegate: GetDeterminantDelegate? //делегатом будет тот, кто выполняет данный протокол
+    var delegate: ArrayCollectionControllerDelegate? //делегатом будет тот, кто выполняет данный протокол
     var matrixVariable = MatrixVariables()
     var arrayOfCell = [CollectionViewCell?]()
     
     @IBAction func cancel(_ sender: Any) {
         let workWithMatrix = WorkWithMatrix()
-        let collectionViewCell = CollectionViewCell()
-        matrixVariable.arrayOfElements = collectionViewCell.filingArray(array: arrayOfCell, size: matrixVariable.size)
-        delegate?.getDeterminantCollectionViewController(self, workWithMatrix.determinantArray(array: matrixVariable.arrayOfElements, sizeMatrix: matrixVariable.size)) //делегируем
+        matrixVariable.arrayOfElements = filingArray(array: arrayOfCell, size: matrixVariable.size)
+        delegate?.getDeterminant(self, determinant: workWithMatrix.determinantArray(array: matrixVariable.arrayOfElements, sizeMatrix: matrixVariable.size), array: matrixVariable.arrayOfElements) //делегируем
     }
     //перед созданием
     override func viewWillAppear(_ animated: Bool) {
@@ -45,8 +44,20 @@ class ArrayCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         arrayOfCell.append(cell)
-        cell.elementMatrixField.text = "\(Int(arc4random_uniform(40)) - 20)"
+        cell.elementMatrixField.text = "\(matrixVariable.arrayOfElements[indexPath.row / matrixVariable.size][indexPath.row % matrixVariable.size])"
 
         return cell
+    }
+    
+    func filingArray(array arrayOfCell: [CollectionViewCell?], size: Int) -> [[Int]]{
+        var array: [[Int]] = []
+        for row in 0..<(size) {
+            array.append([Int]())
+            for coulum in 0..<size {
+                let element: Int = Int(arrayOfCell[coulum + row * size]?.elementMatrixField.text ?? "0") ?? 0
+                array[row].append(element)
+            }
+        }
+        return array
     }
 }

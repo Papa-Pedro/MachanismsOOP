@@ -6,11 +6,19 @@
 //  Copyright © 2020 TimFerens. All rights reserved.
 //
 
+//дописать именование кнопок и добавить действие на 2 кнопку поправить лайауты
+
 import UIKit
 
-class NumberOneViewController: UIViewController, GetDeterminantDelegate {
-    func getDeterminantCollectionViewController(_ controller: ArrayCollectionViewController, _ determinant: ResultDeterminant) {
+class NumberOneViewController: UIViewController, ArrayCollectionControllerDelegate {
+    
+    var matrixVariables = MatrixVariables()
+    var workWithMatrix = WorkWithMatrix()
+    
+    func getDeterminant(_ controller: ArrayCollectionViewController, determinant: ResultDeterminant, array: [[Int]]) {
         dismiss(animated: true, completion: nil)
+        matrixVariables.arrayOfElements = array
+        lookMatrixButton.isHidden = false
         titulDeterminantLabel.isHidden = false
         switch determinant {
         case .overflow(let messange):
@@ -21,25 +29,25 @@ class NumberOneViewController: UIViewController, GetDeterminantDelegate {
         sizeMatrixField.text = "\(matrixVariables.size)"
     }
     
-    var matrixVariables = MatrixVariables()
-    var workWithMatrix = WorkWithMatrix()
-    
     // MARK: - Outlet
     @IBOutlet weak var titulDeterminantLabel: UILabel!
     @IBOutlet weak var determinantLabel: UILabel!
     @IBOutlet weak var sizeMatrixLabel: UILabel!
     @IBOutlet weak var sizeMatrixField: UITextField!
-    @IBOutlet weak var inputSizeButton: UIButton!
+    @IBOutlet weak var createRandomButton: UIButton!
+    @IBOutlet weak var lookMatrixButton: UIButton!
     // MARK: - Actioon
     @IBAction func sizeMatrixField(_ sender: Any) {
         sizeMatrixField.text = ""
     }
-    @IBAction func inputSizeButton(_ sender: UIButton) {
+    //написать
+    @IBAction func createRandomButton(_ sender: UIButton) {
+        let arrayElements = ArrayElements()
         if let size: Int = Int(sizeMatrixField.text ?? "") {
             switch size {
             case 1..<6:
+                matrixVariables.arrayOfElements = arrayElements.createRandomArray(size: size)
                 matrixVariables.size = size
-                //matrixVariables.arrayOfElements = workWithMatrix.fillingRandomElement(size: size, borderAmount: 40)
                 performSegue(withIdentifier: "ShowSegue", sender: self)
             case ...0:
                 sizeMatrixLabel.text = "Не бывает таких матриц"
@@ -48,12 +56,16 @@ class NumberOneViewController: UIViewController, GetDeterminantDelegate {
             }
         }
     }
+    @IBAction func lookMatrixButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShowSegue", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            titulDeterminantLabel.isHidden = true
-            determinantLabel.text = ""
-            sizeMatrixField.text = "___"
+        lookMatrixButton.isHidden = true
+        titulDeterminantLabel.isHidden = true
+        determinantLabel.text = ""
+        sizeMatrixField.text = "___"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
