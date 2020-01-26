@@ -10,25 +10,10 @@
 
 import UIKit
 
-class NumberOneViewController: UIViewController, ArrayCollectionControllerDelegate {
+class NumberOneViewController: UIViewController {
     
     var matrixVariables = MatrixVariables()
     var workWithMatrix = WorkWithMatrix()
-    
-    func getDeterminant(_ controller: ArrayCollectionViewController, determinant: ResultDeterminant, array: [[Int]]) {
-        dismiss(animated: true, completion: nil)
-        matrixVariables.arrayOfElements = array
-        lookMatrixButton.isHidden = false
-        titulDeterminantLabel.isHidden = false
-        switch determinant {
-        case .overflow(let messange):
-            determinantLabel.text = messange
-        case .result(let determinantFinish):
-            determinantLabel.text = ("\(determinantFinish)")
-        }
-        sizeMatrixField.text = "\(matrixVariables.size)"
-    }
-    
     // MARK: - Outlet
     @IBOutlet weak var titulDeterminantLabel: UILabel!
     @IBOutlet weak var determinantLabel: UILabel!
@@ -77,6 +62,24 @@ class NumberOneViewController: UIViewController, ArrayCollectionControllerDelega
             destinationVC.matrixVariable.arrayOfElements = matrixVariables.arrayOfElements
             destinationVC.delegate = self //говорим, я буду делегатом от destinationVC
         }
+    }
+}
+
+extension NumberOneViewController: ArrayCollectionControllerDelegate {
+    
+    func getDeterminant(_ controller: ArrayCollectionViewController, determinant: ResultDeterminant, array: [[Int]]) {
+        dismiss(animated: true, completion: nil)
+        matrixVariables.arrayOfElements = array
+        // MARK: - isHidden
+        lookMatrixButton.isHidden = false
+        titulDeterminantLabel.isHidden = false
+        switch determinant {
+        case .overflow(let messange):
+            determinantLabel.text = messange
+        case .result(let determinantFinish):
+            determinantLabel.text = ("\(determinantFinish)")
+        }
+        sizeMatrixField.text = "\(matrixVariables.size)"
     }
 }
 
